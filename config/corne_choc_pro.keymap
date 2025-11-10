@@ -13,6 +13,7 @@
     chosen { zmk,physical-layout = &default_layout; };
 
     behaviors {
+
         hrm: home_row_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -21,6 +22,17 @@
             tapping-term-ms = <260>;
             quick-tap-ms = <160>;
             bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+        };
+
+        hrl: home_row_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <260>;
+            quick-tap-ms = <160>;
+            bindings = <&kp>, <&mo>;
             hold-trigger-on-release;
         };
     };
@@ -41,21 +53,21 @@
 
             bindings = <
                 // Left side row 1
-                &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none
-                // Right side row 1
-                &none     &hrm Y X    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none 
+                // right side row 1
+                &none  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
                 // Left side row 2
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G      &kp LALT    
+                &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl G 4 &none
                 // Right side row 2
-                &mo 2     &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &none  &kp H    &kp J  &kp K &kp L &kp LS(7)  &kp SQT
                 // Left side row 3
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B                            
+                &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B
                 // Right side row 3
-                &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                &kp N    &kp M  &kp COMMA  &kp DOT  &kp MINUS  &kp RSHIFT
                 // Left thumb
-                         &mo 2  &mo 1  &kp SPACE                        
+                &mo 2  &mo 1  &kp SPACE                        
                 // Right thumb
-                &kp RET  &mo 2  &kp RALT
+                &kp RET  &kp BSPC  &kp LGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -95,8 +107,8 @@
             >;
         };
 
-        extra_layer_1 {
-            display-name = "EXTRA 1";
+        layer3 {
+            display-name = "3";
             bindings = <
 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
@@ -105,11 +117,11 @@
             >;
         };
 
-        extra_layer_2 {
-            display-name = "EXTRA 2";
+        layer4 {
+            display-name = "4";
             bindings = <
 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &kp A  &kp A  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
                         &none  &none  &none                  &none  &none  &none
             >;
