@@ -19,21 +19,20 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <260>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <160>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-on-release;
         };
+        /* hold-trigger-on-release; */
 
         hrl: home_row_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <260>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <160>;
-            bindings = <&kp>, <&mo>;
-            hold-trigger-on-release;
+            bindings = <&mo>, <&kp>;
         };
     };
 };
@@ -77,14 +76,14 @@
             display-name = "1";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   |  LALT  | RALT  | LFT | DWN |  UP | RGT |     |      |
+            // |  TAB |  1  |  2  |  3  |  4  |  5    |  BT0 | BT0 |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   |  BT1  | BT1  | LFT | DWN |  UP | RGT |     |      |
             // | SHFT | BTCR| RGB | RST | BOOT| Unlock|        |       |     |     |     |     |     |      |
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &none  &none
+&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &bt BT_SEL 0  &bt BT_SEL 0  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
+&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 1   &bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &none  &none
 &kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &none    &none    &none     &none     &none  &none
                                           &kp LGUI      &none        &kp SPACE                             &kp LGUI  &none    &kp SPACE
             >;
