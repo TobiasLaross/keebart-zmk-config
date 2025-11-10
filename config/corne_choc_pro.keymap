@@ -43,7 +43,7 @@
                 // Left side row 1
                 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none
                 // Right side row 1
-                &kp C_PP  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &none     &hrm Y X    &kp U  &kp I      &kp O    &kp P     &kp BSPC
                 // Left side row 2
 &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G      &kp LALT    
                 // Right side row 2
