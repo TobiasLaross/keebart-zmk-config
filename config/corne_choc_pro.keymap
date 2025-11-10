@@ -54,15 +54,15 @@
                 // Left side row 1
                 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none 
                 // right side row 1
-                &none  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &none  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp MINUS
                 // Left side row 2
                 &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl 4 G &none
                 // Right side row 2
-                &none  &kp H    &kp J  &kp K &kp L &kp LS(7)  &kp SQT
+                &none  &kp H    &kp J  &kp K &kp L &kp LS(N7) &kp AMPS
                 // Left side row 3
                 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B
                 // Right side row 3
-                &kp N    &kp M  &kp COMMA  &kp DOT  &kp MINUS  &kp RSHIFT
+                &kp N    &kp M  &kp COMMA  &kp DOT  &kp EQUAL  &kp RSHIFT
                 // Left thumb
                 &mo 2  &mo 1  &kp SPACE                        
                 // Right thumb
@@ -82,10 +82,22 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &bt BT_SEL 0  &bt BT_SEL 0  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 1   &bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &none  &none
-&kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &none    &none    &none     &none     &none  &none
-                                          &kp LGUI      &none        &kp SPACE                             &kp LGUI  &none    &kp SPACE
+                // Left side row 1
+                &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none 
+                // right side row 1
+                &none  &kp LS(3)    &kp U  &kp I      &kp O    &kp LA(LS(Q))   &kp PLUS
+                // Left side row 2
+                &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl 4 G &none
+                // Right side row 2
+                &none  &kp LS(2)    &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp LBKT  &kp SQT
+                // Left side row 3
+                &kp LT  &kp Z  &kp X  &kp C  &kp V  &kp B
+                // Right side row 3
+                &kp LS(3) &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp MINUS  &kp GT
+                // Left thumb
+                &mo 2  &mo 1  &kp SPACE
+                // Right thumb
+                &kp RET  &kp BSPC  &kp LGUI
             >;
         };
 
