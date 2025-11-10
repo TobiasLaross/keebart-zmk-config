@@ -56,7 +56,7 @@
                 // right side row 1
                 &none  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
                 // Left side row 2
-                &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl G 4 &none
+                &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl 4 G &none
                 // Right side row 2
                 &none  &kp H    &kp J  &kp K &kp L &kp LS(7)  &kp SQT
                 // Left side row 3
