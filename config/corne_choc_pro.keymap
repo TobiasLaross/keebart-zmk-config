@@ -44,17 +44,19 @@
         layer0 {
             display-name = "0";
 
-// --------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |                       none || none |  Y  |  U   |  I  |  O  |  P  | + |
-// | ESC |  A/lt4  |  S/LCTRL  |  D/LALT  |  F/LGUI  |  G/LT3 | none || none |  H  |  J   |  K  |  L  |  /  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |               |            ||  N  |  M   |  ,  |  .  |  -  | RSHIFT  |
-//                                                | LT2 | LT1 | SPC  ||  ENT || BSPC  | LGUI |
+/*
+---------------------------------------------------------------------------------------
+|  TAB |  Q  |  W  |  E  |  R  |  T  |           none || LT2  | Y | U | I | O | P | + |
+| ESC | A/lt4 | S/CTRL | D/ALT | F/GUI | G/LT3 | none || none | H | J | K | L | / | ' |
+| SHFT |  Z  |  X  |  C  |  V  |  B  |    |           ||  N | M | , | . | - | RSHIFT  |
+                                   | LT2 | LT1 | SPC  ||  ENT || BSPC  | LGUI |
+*/
 
             bindings = <
                 // Left side row 1
                 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none 
                 // right side row 1
-                &none  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp MINUS
+                &mo 2  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp MINUS
                 // Left side row 2
                 &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl 4 G &none
                 // Right side row 2
@@ -62,7 +64,7 @@
                 // Left side row 3
                 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B
                 // Right side row 3
-                &kp N    &kp M  &kp COMMA  &kp DOT  &kp EQUAL  &kp RSHIFT
+                &kp N    &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp RSHIFT
                 // Left thumb
                 &mo 2  &mo 1  &kp SPACE                        
                 // Right thumb
@@ -74,17 +76,17 @@
 
         layer1 {
             display-name = "1";
- /*
+/*
 ------|------|------|---|---|--------|-------||-------|----|-------|----------|-------|------|-------|
- none | none | none | [ | ] | none   |> none || none <| #  | 7 | 8 | 9 | °    | Å
- none | none | none | { | } | PLUS   |> none || none <| "  | 4 | 5 | 6 | Ö    | Ä
- <   | none | none | ( | ) | none   |       ||       | !  | 1 | 2 | 3 | none | >
+ none | none | none | [ | ] | ~   |> none || bt0 <| #  | 7 | 8 | 9 | °    | Å
+ none | none | none | { | } | `   |> none || bt1 <| "  | 4 | 5 | 6 | Ö    | Ä
+ <   | none | none | ( | )  | none   |       ||       | !  | 1 | 2 | 3 | none | >
       |      |      |     none | none | none ||   RET | 0 | , |
  -----|------|------|------|------|-------|--||-------|-------|----------------------|-------|
 */
             bindings = <
                 // Left side row 1
-                &none  &none  &none  &kp LA(N8)  &kp LA(N9) &none  &none 
+                &none  &none  &none  &kp LA(N8)  &kp LA(N9) &kp LA(RBRC)  &none
                 // right side row 1
                 &bt BT_SEL 0  &kp LS(N3)  &kp KP_N7  &kp KP_N8      &kp KP_N9    &kp LA(LS(Q))   &kp LBKT
                 // Left side row 2
@@ -92,7 +94,7 @@
                 // Right side row 2
                 &bt BT_SEL 1  &kp LS(N2)    &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp SEMI  &kp SQT
                 // Left side row 3
-                &kp NUBS  &none  &none  &kp LS(N8)  &kp LS(N9)  &none
+                &kp NUBS  &none  &none  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)
                 // Right side row 3
                 &kp LS(N1) &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp SLASH  &kp LS(NUBS)
                 // Left thumb
@@ -105,17 +107,32 @@
         layer2 {
             display-name = "2";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  LALT | RALT  |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |               |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |               | ENT |     | ALT |
+ /*
+------|------|------|---|---|--------|-------||-------|----|-------|----------|-------|------|-------|
+ none | none | none | none | | none   |> none || none      <| none | '|' | none | none | °    | Å
+ none | none | none | none | none | PLUS   |> none || none <| _    | $ | % | & | Ö    | Ä
+ BL   | none | none | none | none | none   |       ||       | none | ! | @ | # | none | BL
+      |      |      |     none | none | none ||   RET | = | - |
+ -----|------|------|------|------|-------|--||-------|-------|----------------------|-------|
+*/
 
             bindings = <
-&bootloader  &sys_reset  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &sys_reset  &bootloader
-&kp LCTRL    &none      &none  &none    &none    &none     &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH    &kp GRAVE
-&kp LSHFT    &none      &none  &none    &none    &none                           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE    &kp TILDE
-                                 &kp LGUI  &none    &kp SPACE                        &kp RET    &none     &kp RALT
+                // Left side row 1
+                &none  &none  &none  &none  &none &none  &none 
+                // right side row 1
+                &none  &none  &kp LS(LA(7))  &none      &none    &none   &none
+                // Left side row 2
+                &none  &none  &none  &none &none &none &none
+                // Right side row 2
+                &none  &kp LS(SLASH)  &kp LA(N4)  &kp LS(N5) &kp LS(N6) &none  &none
+                // Left side row 3
+                &bootloader  &none  &none  &none  &none  &none
+                // Right side row 3
+                &none &kp LS(N1)  &kp LA(N2)  &kp LS(N3)  &none &none 
+                // Left thumb
+                &none  &none  &none
+                // Right thumb
+                &kp RET  &kp KP_N0  &kp SLASH
             >;
         };
 
