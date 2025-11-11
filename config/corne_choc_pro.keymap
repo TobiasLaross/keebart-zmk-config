@@ -4,10 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
@@ -138,11 +142,32 @@
 
         layer3 {
             display-name = "3";
+ /*
+------|------|------|---|---|--------|-------||-------|----|-------|----------|-------|------|-------|
+ none | none | none | none | | none   |> none || none      <| none | '|' | none | none | °    | Å
+ none | none | none | none | none | PLUS   |> none || none <| _    | $ | % | & | Ö    | Ä
+ BL   | none | none | none | none | none   |       ||       | none | ! | @ | # | none | BL
+      |      |      |     none | none | none ||   RET | = | - |
+ -----|------|------|------|------|-------|--||-------|-------|----------------------|-------|
+*/
+
             bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &kp NON_US_HASH  &kp TILDE  &kp ASTERISK  &kp BACKSLASH  &kp PIPE
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
-                        &none  &none  &none                  &none  &none  &none
+                // Left side row 1
+                &kp C_BRI_DN  &kp C_BRI_UP  &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP  &none &none
+                // right side row 1
+                &none  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT    &none   &none
+                // Left side row 2
+                &kp LC(DOWN)  &kp LC(UP)  &none  &none &none &none &none
+                // Right side row 2
+                &none &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none &none
+                // Left side row 3
+                &none  &none  &none  &none  &none  &none
+                // Right side row 3
+                &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none &none
+                // Left thumb
+                &none  &none  &none
+                // Right thumb
+                &mkp MB1 &mkp MB2  &none
             >;
         };
 
