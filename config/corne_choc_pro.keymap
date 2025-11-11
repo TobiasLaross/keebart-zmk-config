@@ -60,7 +60,7 @@
                 // Left side row 2
                 &kp ESC  &hrl 4 A  &hrm LCTRL S  &hrm LALT D &hrm LGUI F &hrl 4 G &none
                 // Right side row 2
-                &none  &kp H    &kp J  &kp K &kp L &kp LS(N7) &kp AMPS
+                &none  &kp H    &kp J  &kp K &kp L &kp LS(N7) &kp APOS
                 // Left side row 3
                 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B
                 // Right side row 3
@@ -132,7 +132,7 @@
                 // Left thumb
                 &none  &none  &none
                 // Right thumb
-                &kp RET  &kp KP_N0  &kp SLASH
+                &kp RET  &kp LS(N0)  &kp SLASH
             >;
         };
 
