@@ -258,15 +258,15 @@
             display-name = "1";
 /*
 ------|------|------|---|---|--------|-------||-------|----|-------|----------|-------|------|-------|
- none | none | none | [ | ] | ~   |> none || bt0 <| #  | 7 | 8 | 9 | °    | Å
- none | none | none | { | } | `   |> none || bt1 <| "  | 4 | 5 | 6 | Ö    | Ä
+ TILDE | none | none | [ | ] | ~   |> none || bt0 <| #  | 7 | 8 | 9 | °    | Å
+ NON_US_HASH | none | none | { | } | `   |> none || bt1 <| "  | 4 | 5 | 6 | Ö    | Ä
  <   | none | none | ( | )  | ^   |       ||       | !  | 1 | 2 | 3 | none | >
       |      |      |     none | none | none ||   RET | 0 | , |
  -----|------|------|------|------|-------|--||-------|-------|----------------------|-------|
 */
             bindings = <
                 // Left side row 1
-                &none  &none  &none  &kp LA(N8)  &kp LA(N9) &kp LA(LS(RBRC))  &none
+                &none  &none  &none  &kp LA(N8)  &kp LA(N9) &kp CARET &none
                 // right side row 1
                 &bt BT_SEL 0  &kp LS(N3)  &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp LA(LS(Q)) &kp LBKT
                 // Left side row 2
