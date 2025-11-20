@@ -74,16 +74,6 @@
                 ;
         };
 
-        grave_escaped2: grave_escaped2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp SV_GRAVE>
-                , <&macro_wait_time 50>
-                , <&macro_tap &kp SPACE>
-                ;
-        };
-
         tmux_source: tmux_source {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -296,7 +286,7 @@
 */
             bindings = <
                 // Left side row 1
-                &grave_escaped2  &none  &none  &kp LA(N8)  &kp LA(N9) &tilde_escaped &none
+                &none  &none  &none  &kp LA(N8)  &kp LA(N9) &tilde_escaped &none
                 // right side row 1
                 &bt BT_SEL 0  &kp LS(N3)  &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp LA(LS(Q)) &kp LBKT
                 // Left side row 2
