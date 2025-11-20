@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 5000  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 3000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15    // default: 10
 
 #include "keys_sv.h"
@@ -18,7 +18,7 @@
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
-    time-to-max-speed-ms = <300>;
+    time-to-max-speed-ms = <250>;
     acceleration-exponent = <2>;
 };
 
@@ -69,7 +69,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp SV_GRAVE>
-                , <&macro_pause_for_release>
+                , <&macro_wait_time 50>
                 , <&macro_tap &kp SPACE>
                 ;
         };
@@ -296,13 +296,13 @@
 */
             bindings = <
                 // Left side row 1
-                &kp SV_GRAVE  &none  &none  &kp LA(N8)  &kp LA(N9) &tilde_escaped &none
+                &grave_escaped  &none  &none  &kp LA(N8)  &kp LA(N9) &tilde_escaped &none
                 // right side row 1
                 &bt BT_SEL 0  &kp LS(N3)  &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp LA(LS(Q)) &kp LBKT
                 // Left side row 2
                 &none  &none  &none  &kp LS(LA(N8)) &kp LS(LA(N9)) &kp PLUS &none
                 // Right side row 2
-                &bt BT_SEL 1  &kp LS(N2) &kp KP_N4  &kp KP_N5 &kp KP_N6 &grave_escaped  &kp SQT
+                &bt BT_SEL 1  &kp LS(N2) &kp KP_N4  &kp KP_N5 &kp KP_N6 &grave_escaped2  &kp SQT
                 // Left side row 3
                 &kp NUBS  &none  &none  &kp LS(N8)  &kp LS(N9)  &kp LA(RBRC)
                 // Right side row 3
