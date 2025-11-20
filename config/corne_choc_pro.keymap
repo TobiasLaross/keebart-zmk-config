@@ -69,7 +69,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp SV_GRAVE>
-                , <&macro_wait_time 50>
+                , <&macro_wait_time 10>
                 , <&macro_tap &kp SPACE>
                 ;
         };
@@ -79,7 +79,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp SV_GRAVE>
-                , <&macro_wait_time 10>
+                , <&macro_wait_time 50>
                 , <&macro_tap &kp SPACE>
                 ;
         };
@@ -300,9 +300,9 @@
                 // right side row 1
                 &bt BT_SEL 0  &kp LS(N3)  &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp LA(LS(Q)) &kp LBKT
                 // Left side row 2
-                &none  &none  &none  &kp LS(LA(N8)) &kp LS(LA(N9)) &kp PLUS &none
+                &none  &none  &none  &kp LS(LA(N8)) &kp LS(LA(N9)) &grave_escaped &none
                 // Right side row 2
-                &bt BT_SEL 1  &kp LS(N2) &kp KP_N4  &kp KP_N5 &kp KP_N6 &grave_escaped  &kp SQT
+                &bt BT_SEL 1  &kp LS(N2) &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp SEMI  &kp SQT
                 // Left side row 3
                 &kp NUBS  &none  &none  &kp LS(N8)  &kp LS(N9)  &kp LA(RBRC)
                 // Right side row 3
