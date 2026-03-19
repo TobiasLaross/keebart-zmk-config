@@ -163,6 +163,17 @@
                 ;
         };
 
+        tmux_dotfiles: tmux_dotfiles {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp P>
+                ;
+        };
+
         tmux_sess: tmux_sess{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -234,6 +245,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+
     };
 };
 
@@ -381,7 +393,7 @@
                 // Left side row 1
                 &none  &none  &none  &none  &tmux_rename &tmux_compile  &none 
                 // right side row 1
-                &none  &tmux_cmd  &tmux_update &tmux_install &tmux_sess_last &none &tmux_notes
+                &none  &tmux_cmd  &tmux_update &tmux_install &tmux_sess_last &tmux_dotfiles &tmux_notes
                 // Left side row 2
                 &none  &none  &none  &tmux_kill_sess &none &tmux_recompile &none
                 // Right side row 2
